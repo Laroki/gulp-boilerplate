@@ -10,6 +10,7 @@ const concat = require('gulp-concat');
 const imagemin = require('gulp-imagemin');
 
 
+
 const server = browserSync.create();
 const prod = process.env.NODE_ENV === 'prod';
 
@@ -60,6 +61,7 @@ function serve(done) {
 
 
 exports.dev = series(parallel(html, css, js, images), serve, () =>
-  watch(['src/scss/**/*.scss','src/**/**/*.pug','src/js/*.js'], series(parallel(html, css, js, images), reload))
+  watch(['src/scss/**/*.scss','src/**/**/*.pug','src/js/*.js'],
+  series(parallel(html, css, js, images), reload))
 );
 exports.build = parallel(html,css, js,images);
