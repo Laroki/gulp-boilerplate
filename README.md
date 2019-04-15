@@ -1,1 +1,1 @@
-Projet semaine intensive 3D
+Gulp boilerplate
