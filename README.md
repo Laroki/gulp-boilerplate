@@ -1,1 +1,2 @@
-Projet semaine intensive 3D
+Gulp boilerplate <br>
+Preconfig pour gulp
