@@ -15,7 +15,7 @@ const server = browserSync.create();
 const prod = process.env.NODE_ENV === 'prod';
 
 function html() {
-  return gulp.src('src/*.pug')
+  return src('src/*.pug')
     .pipe(pug())
     .pipe(dest('dist'));
 }
@@ -61,7 +61,7 @@ function serve(done) {
 
 
 exports.dev = series(parallel(html, css, js, images), serve, () =>
-  watch(['src/scss/**/*.scss','src/**/**/*.pug','src/js/*.js'],
+  watch(['src/scss/*.scss','src/**/*.pug','src/js/*.js'],
   series(parallel(html, css, js, images), reload))
 );
 exports.build = parallel(html,css, js,images);
